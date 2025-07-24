@@ -14,5 +14,7 @@ import java.util.List;
 public class Skill {
   private Long skillId;
   private String type;
+  private Integer mark;
+  private String result;
   private List<SkillName> names;
 }
