@@ -2,7 +2,7 @@ package com.mercadona.rrhh.evaluation.driven.repositories.adapters;
 
 import com.mercadona.rrhh.evaluation.application.ports.driven.EmployeeSkillsRepositoryPort;
 import com.mercadona.rrhh.evaluation.domain.employee.Employee;
-import com.mercadona.rrhh.evaluation.driven.repositories.EmployeeSkillsMOJpaRepository;
+import com.mercadona.rrhh.evaluation.driven.repositories.interfaces.EmployeeSkillsMOJpaRepository;
 import com.mercadona.rrhh.evaluation.driven.repositories.mappers.EmployeeSkillMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

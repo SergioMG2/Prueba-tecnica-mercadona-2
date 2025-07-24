@@ -13,5 +13,6 @@ import java.util.List;
 @NoArgsConstructor
 public class Skill {
   private Long skillId;
+  private String type;
   private List<SkillName> names;
 }

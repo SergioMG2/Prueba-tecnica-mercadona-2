@@ -1,4 +1,4 @@
-package com.mercadona.rrhh.evaluation.driven.repositories;
+package com.mercadona.rrhh.evaluation.driven.repositories.interfaces;
 
 import com.mercadona.rrhh.evaluation.driven.repositories.models.employee.EmployeeSkillMO;
 import com.mercadona.rrhh.evaluation.driven.repositories.models.employee.pk.EmployeeSkillMOPK;

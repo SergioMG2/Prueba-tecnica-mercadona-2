@@ -4,12 +4,11 @@ import com.mercadona.framework.cna.commons.domain.MercadonaPage;
 import com.mercadona.framework.cna.lib.repository.builders.MercadonaPageBuilder;
 import com.mercadona.rrhh.evaluation.application.ports.driven.EmployeeRepositoryPort;
 import com.mercadona.rrhh.evaluation.domain.employee.Employee;
-import com.mercadona.rrhh.evaluation.driven.repositories.EmployeeMOJpaRepository;
+import com.mercadona.rrhh.evaluation.driven.repositories.interfaces.EmployeeMOJpaRepository;
 import com.mercadona.rrhh.evaluation.driven.repositories.mappers.EmployeeMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Repository;
 
 @Slf4j
 @AllArgsConstructor

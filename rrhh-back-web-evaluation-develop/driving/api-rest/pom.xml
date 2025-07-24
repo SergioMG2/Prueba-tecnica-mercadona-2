@@ -47,6 +47,7 @@
       <artifactId>spring-security-test</artifactId>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>com.mercadona.rrhh.evaluation.api</groupId>
       <artifactId>rrhh-evaluation-api-server-cna-17</artifactId>

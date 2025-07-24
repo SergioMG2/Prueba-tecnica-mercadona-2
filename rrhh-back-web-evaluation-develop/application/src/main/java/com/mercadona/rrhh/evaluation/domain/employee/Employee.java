@@ -18,6 +18,6 @@ public class Employee {
   private String name;
   private String firstSurname;
   private String secondSurname;
-  private String userId;
+  private String role_id;
   private List<Skill> skills;
 }

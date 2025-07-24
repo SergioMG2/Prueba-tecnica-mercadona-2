@@ -30,6 +30,10 @@ public class EmployeeSkillMO {
   @Column(name = "skill_id", nullable = false)
   private Integer skillId;
 
+  @Id
+  @Column(name = "nota")
+  private String nota;
+
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "skill_id", insertable = false, updatable = false)
   private SkillMO skill;
