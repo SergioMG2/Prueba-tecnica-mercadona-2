@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Mapper(componentModel = "spring")
-public interface EmployeeSkillDTOMapper {
+public interface   EmployeeSkillDTOMapper {
   EmployeeSkillsResponse toDTO(Employee employee);
 
   default List<SkillResource> toSkillResourceDTO(List<Skill> skills) {

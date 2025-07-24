@@ -42,7 +42,6 @@
     <!-- Adapter implementations-->
     <module>driving/api-rest</module>
     <module>driven/postgres-repository</module>
-    <module>rrhh-evaluation-api-server-cna-17</module>
     <!-- Runtime -->
     <module>boot</module>
   </modules>

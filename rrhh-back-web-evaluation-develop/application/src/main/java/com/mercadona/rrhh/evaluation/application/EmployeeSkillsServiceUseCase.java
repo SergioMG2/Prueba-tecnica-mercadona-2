@@ -32,7 +32,7 @@ public class EmployeeSkillsServiceUseCase implements EmployeeSkillsServicePort {
     return repository.getEmployeeSkills(employeeId, managedGroupId);
   }
 
-  public String calculateEmployeeSkills(String empployeeId, String managedGroupId){
+  /*public String calculateEmployeeSkills(String empployeeId, String managedGroupId){
     Employee employee = getEmployeeSkills(empployeeId, managedGroupId);
     for (Skill skill : employee.getSkills()){
       switch (skill.getType()) {
@@ -50,7 +50,7 @@ public class EmployeeSkillsServiceUseCase implements EmployeeSkillsServicePort {
         case "N":
           break;
     }
-  }
+  }*/
 
 
 }
