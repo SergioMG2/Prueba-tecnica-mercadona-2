@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>rrhh-back-web-evaluation-api-rest</artifactId>
+  <packaging>jar</packaging>
+  <name>rrhh-back-web-evaluation-api-rest</name>
+
+  <parent>
+    <groupId>com.mercadona.rrhh.evaluation</groupId>
+    <artifactId>rrhh-back-web-evaluation</artifactId>
+    <version>0.0.1</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+
+  <properties>
+    <example.api.version>2.2.2</example.api.version>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>com.mercadona.rrhh.evaluation</groupId>
+      <artifactId>rrhh-back-web-evaluation-application</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.mercadona.framework.cna</groupId>
+      <artifactId>fwkcna-starter-web</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.mercadona.framework.cna</groupId>
+      <artifactId>fwkcna-starter-security</artifactId>
+    </dependency>
+
+    <dependency>
+			<groupId>com.mercadona.framework.cna.api.examples</groupId>
+			<artifactId>examples-api-server-cna-17</artifactId>
+			<version>${example.api.version}</version>
+		</dependency>
+
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.mercadona.rrhh.evaluation.api</groupId>
+      <artifactId>rrhh-evaluation-api-server-cna-17</artifactId>
+      <version>0.0.1</version>
+    </dependency>
+  </dependencies>
+
+</project>

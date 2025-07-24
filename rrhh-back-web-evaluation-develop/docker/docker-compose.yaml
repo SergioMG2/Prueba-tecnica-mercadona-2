@@ -1,0 +1,25 @@
+version: '3.7'
+
+networks:
+  local:
+    name: my-web-network
+
+services:
+  db_postgres_rrhh_evaluation:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: adm-rrhh-evaluation
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: rrhh_evaluation
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - postgres16-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - local
+
+volumes:
+  postgresql:
+  postgres16-data:
+    driver: local

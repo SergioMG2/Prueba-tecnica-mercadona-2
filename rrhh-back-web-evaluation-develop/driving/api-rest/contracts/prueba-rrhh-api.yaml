@@ -1,0 +1,199 @@
+openapi: 3.0.1
+info:
+  title: Employee Skills Evaluation API
+  description: API used to manage evaluations of the employees skills
+  version: 0.0.1
+tags:
+  - name: Employee
+    description: Employee Controller
+  - name: Employee Skills
+    description: Employee Skill Controller
+paths:
+  /employees:
+    get:
+      summary: Get a paginated list of employees
+      operationId: getEmployees
+      tags:
+        - Employee
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/Size'
+      responses:
+        200:
+          description: Successful retrieval of employee list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeePageResponse'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /managed-groups/{managedGroupId}/employees/{employeeId}/skills:
+    get:
+      summary: Get the skills for a specific employee
+      operationId: getEmployeeSkills
+      tags:
+        - Employee Skills
+      parameters:
+        - $ref: '#/components/parameters/ManagedGroupId'
+        - $ref: '#/components/parameters/EmployeeId'
+      responses:
+        200:
+          description: Successful retrieval of skills
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeSkillsResponse'
+        404:
+          description: Employee not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  parameters:
+    Page:
+      name: page
+      in: query
+      description: Page number for pagination
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        default: 1
+    Size:
+      name: size
+      in: query
+      description: Page size for pagination
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        default: 20
+    ManagedGroupId:
+      name: managedGroupId
+      in: path
+      required: true
+      description: Managed group ID of the employee
+      schema:
+        type: string
+        maxLength: 2
+        example: "08"
+    EmployeeId:
+      name: employeeId
+      in: path
+      required: true
+      description: Unique identifier of the employee
+      schema:
+        type: string
+        maxLength: 7
+        example: "johndoe"
+  schemas:
+    EmployeeResource:
+      type: object
+      required:
+        - employeeId
+        - managedGroupId
+        - name
+        - userId
+      properties:
+        employeeId:
+          type: string
+          maxLength: 7
+          example: "johndoe"
+        managedGroupId:
+          type: string
+          maxLength: 2
+          example: "08"
+        name:
+          type: string
+          example: "John Doe Doe"
+        userId:
+          type: string
+          example: "johdodo"
+    EmployeePageResponse:
+      type: object
+      required:
+        - pagination
+        - data
+      properties:
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmployeeResource'
+
+    SkillResource:
+      type: object
+      required:
+        - skillId
+        - name
+      properties:
+        skillId:
+          type: integer
+          format: int64
+          example: 123
+        name:
+          type: string
+          example: "Trabajo en equipo"
+
+    EmployeeSkillsResponse:
+      type: object
+      required:
+        - employeeId
+        - managedGroupId
+        - skills
+      properties:
+        employeeId:
+          type: string
+          maxLength: 7
+          example: "johndoe"
+        managedGroupId:
+          type: string
+          maxLength: 2
+          example: "08"
+        skills:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkillResource'
+    Pagination:
+      type: object
+      properties:
+        requestedPage:
+          type: integer
+        requestedSize:
+          type: integer
+        retrievedResults:
+          type: integer
+        totalResults:
+          type: integer
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            description:
+              type: string
+            details:
+              type: array
+              items:
+                type: string

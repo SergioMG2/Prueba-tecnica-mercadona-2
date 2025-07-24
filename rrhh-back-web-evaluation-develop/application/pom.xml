@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>rrhh-back-web-evaluation-application</artifactId>
+  <packaging>jar</packaging>
+  <name>rrhh-back-web-evaluation-application</name>
+
+  <parent>
+    <groupId>com.mercadona.rrhh.evaluation</groupId>
+    <artifactId>rrhh-back-web-evaluation</artifactId>
+    <version>0.0.1</version>
+  </parent>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>com.mercadona.framework.cna</groupId>
+      <artifactId>fwkcna-commons-domain</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.persistence</groupId>
+      <artifactId>jakarta.persistence-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+    </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-web</artifactId>
+      </dependency>
+
+  </dependencies>
+
+</project>
